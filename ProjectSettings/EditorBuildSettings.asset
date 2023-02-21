@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Scene_1_Language.unity
     guid: bcf346f2311a53c4a86a64bc029ff9e8
   - enabled: 1
-    path: Assets/Scenes/Scene_2_UserCreation.unity
+    path: Assets/Scenes/Scene_2_CharacterSelection.unity
     guid: 2a7a9d018a2d68940b887cda4f4baad6
+  - enabled: 1
+    path: Assets/Scenes/Scene_3_GameMenu.unity
+    guid: 4685873d962b2754daf74d62b5e27e2a
   m_configObjects: {}
