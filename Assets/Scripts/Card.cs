@@ -22,29 +22,18 @@ public class Card : MonoBehaviour
         initialPos = transform.position;
         originalSize = GetComponent<RectTransform>().sizeDelta;
     }
-    private void Update()
-    {
-        if (audioSource.isPlaying)
-        {
-            GetComponent<Outline>().enabled = true;
-        }
-        else
-        {
-            GetComponent<Outline>().enabled = false;
-        }
-    }
 
-    public void Clicked()
+    public void PointerClick()
     {
-        if (audioSource != null && !audioSource.isPlaying)
-        {
-            audioSource.Play();
-        }
+        StartCoroutine(PointerClickPlaySound());
     }
-
+    
     public void Drag()
     {
-        transform.position = Input.mousePosition;
+        if (AudioManager.instance.gameStarted)
+        {
+            transform.position = Input.mousePosition;
+        }
     }
 
     public void Drop()
@@ -77,5 +66,18 @@ public class Card : MonoBehaviour
             amIDroppedToTarget = false;
             transform.position = initialPos;
         }
+    }
+
+    private IEnumerator PointerClickPlaySound()
+    {
+        if (AudioManager.instance.gameStarted)
+        {
+            audioSource.Play();
+            GetComponent<Outline>().enabled = true;
+            yield return new WaitForSeconds(1);
+            GetComponent<Outline>().enabled = false;
+        }
+        yield return null;
+        
     }
 }

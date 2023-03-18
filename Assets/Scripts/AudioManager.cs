@@ -4,11 +4,17 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
+    public static AudioManager instance;
+    public bool gameStarted = false;
+
+
     [SerializeField] private AudioSource audioSourceIntroduction;
     [SerializeField] private AudioSource[] audioSources;
-
+    
     private void Start()
     {
+        instance = this;
+
         if(audioSourceIntroduction != null)
             StartCoroutine(PlayAudio(audioSourceIntroduction));
 
@@ -33,6 +39,7 @@ public class AudioManager : MonoBehaviour
                 yield return new WaitForSeconds(audioSources[i].clip.length);
             }
         }
+        gameStarted = true;
         yield return null;
     }
 
