@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class AudioManager : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class AudioManager : MonoBehaviour
 
     [SerializeField] private AudioSource audioSourceIntroduction;
     [SerializeField] private AudioSource[] audioSources;
+
+    [SerializeField] private AudioSource castleGameAudioSource, blacksmithGameAudioSource;
     
     private void Start()
     {
@@ -18,9 +21,15 @@ public class AudioManager : MonoBehaviour
         if(audioSourceIntroduction != null)
             StartCoroutine(PlayAudio(audioSourceIntroduction));
 
-        if (audioSources != null)
+        if (audioSources != null && SceneManager.GetActiveScene().name == "Scene_8.0_MillGameLevel1")
             StartCoroutine(PlayAllAudios());
-        
+
+        if (audioSources != null && SceneManager.GetActiveScene().name == "Scene_8.1_CastleGameLevel1")
+            castleGameAudioSource.Play();
+
+        if (audioSources != null && SceneManager.GetActiveScene().name == "Scene_8.2_BlacksmithGameLevel1")
+            blacksmithGameAudioSource.Play();
+
     }
 
     private IEnumerator PlayAudio(AudioSource audioSource)

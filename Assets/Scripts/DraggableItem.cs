@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IPointerClickHandler
@@ -39,11 +40,30 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 
         image.raycastTarget = true;
 
-        if (MillGameManager.Instance.matchingSlot1.transform.childCount == 1 &&
-            MillGameManager.Instance.matchingSlot2.transform.childCount == 1)
+        if (SceneManager.GetActiveScene().name == "Scene_8.0_MillGameLevel1")
         {
-            MillGameManager.Instance.CheckSlotItems();
+            if (MillGameManager.Instance.matchingSlot1.transform.childCount == 1 &&
+            MillGameManager.Instance.matchingSlot2.transform.childCount == 1)
+            {
+                MillGameManager.Instance.CheckSlotItems();
+            }
         }
+        else if(SceneManager.GetActiveScene().name == "Scene_8.1_CastleGameLevel1")
+        {
+            int childCountSlot1 = CastleGameManager.instance.slots[0].transform.childCount;
+            int childCountSlot2 = CastleGameManager.instance.slots[1].transform.childCount;
+            int childCountSlot3 = CastleGameManager.instance.slots[2].transform.childCount;
+            int childCountSlot4 = CastleGameManager.instance.slots[3].transform.childCount;
+            int childCountSlot5 = CastleGameManager.instance.slots[4].transform.childCount;
+
+            if (childCountSlot1 > 0 && childCountSlot2 > 0 && childCountSlot3 > 0 &&
+                childCountSlot4 > 0 && childCountSlot5 > 0)
+            {
+                CastleGameManager.instance.CheckSlotsOrder();
+            }
+
+        }
+        
     }
 
     public void OnPointerClick(PointerEventData eventData)

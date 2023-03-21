@@ -9,9 +9,13 @@ public class MillGameManager : MonoBehaviour
 
     GameObject slotItem1, slotItem2;
     DraggableItem draggableItem1, draggableItem2;
+
+    public int score = 0;
+    public GameObject winPanel;
     private void Awake()
     {
         Instance = this;
+        winPanel.SetActive(false);
     }
 
     public void CheckSlotItems()
@@ -24,23 +28,33 @@ public class MillGameManager : MonoBehaviour
 
         if (slotItem1.name[0] == slotItem2.name[0])
         {
-            StartCoroutine(DestroyItems());
+            StartCoroutine(TrueMatch());
         }
         else
         {
-            StartCoroutine(ReplaceToOriginalPlace());
+            StartCoroutine(WrongMatch());
         }
 
     }
 
-    private IEnumerator DestroyItems()
+    private IEnumerator TrueMatch()
     {
         yield return new WaitForSeconds(1);
+        score += 10;
         Destroy(slotItem1);
         Destroy(slotItem2);
+        yield return new WaitForSeconds(.1f);
+        int items = GameObject.FindGameObjectsWithTag("Item").Length;
+
+        if (items == 0)
+        {
+            winPanel.SetActive(true);
+            PlayerPrefs.SetString("MillGameLevel1", "true");
+        }
+
     }
 
-    private IEnumerator ReplaceToOriginalPlace()
+    private IEnumerator WrongMatch()
     {
         yield return new WaitForSeconds(1);
         draggableItem1.parentAfterDrag = draggableItem1.originalParent;
