@@ -22,13 +22,7 @@ public class ShopCostum : MonoBehaviour, IPointerClickHandler
 
         if (locked && buyable)
         {
-            int goldAmount = ShopManager.instance.goldAmount;
-            ShopCostum shopCostum = selectedCostum.GetComponent<ShopCostum>();
-            if (goldAmount >= shopCostum.costumCost)
-            {
-                goldAmount -= shopCostum.costumCost;
-
-            }
+            
         }
     }
 }

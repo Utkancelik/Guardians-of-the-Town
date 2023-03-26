@@ -8,7 +8,6 @@ public class ShopManager : MonoBehaviour
     public static ShopManager instance;
     public GameObject[] shopCostums;
     public GameObject selectedAvatar;
-    public int goldAmount = 12000;
     private void Awake()
     {
         instance = this;
