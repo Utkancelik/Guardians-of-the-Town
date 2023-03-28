@@ -3634,6 +3634,8 @@ MonoBehaviour:
   - {fileID: 1647104493}
   - {fileID: 913149472}
   - {fileID: 1697080784}
+  castleGameAudioSource: {fileID: 0}
+  blacksmithGameAudioSource: {fileID: 0}
 --- !u!1 &1669541534
 GameObject:
   m_ObjectHideFlags: 0

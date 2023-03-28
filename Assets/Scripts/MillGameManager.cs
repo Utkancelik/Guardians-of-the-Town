@@ -40,7 +40,6 @@ public class MillGameManager : MonoBehaviour
     private IEnumerator TrueMatch()
     {
         yield return new WaitForSeconds(1);
-        score += 10;
         Destroy(slotItem1);
         Destroy(slotItem2);
         yield return new WaitForSeconds(.1f);
@@ -48,8 +47,7 @@ public class MillGameManager : MonoBehaviour
 
         if (items == 0)
         {
-            winPanel.SetActive(true);
-            PlayerPrefs.SetString("MillGameLevel1", "true");
+            Win();
         }
 
     }
@@ -62,5 +60,12 @@ public class MillGameManager : MonoBehaviour
 
         draggableItem1.transform.SetParent(draggableItem1.parentAfterDrag);
         draggableItem2.transform.SetParent(draggableItem2.parentAfterDrag);
+    }
+
+    private void Win()
+    {
+        winPanel.SetActive(true);
+        PlayerPrefs.SetString("MillGameLevel1", "true");
+        MoneyManager.instance.money += 125;
     }
 }

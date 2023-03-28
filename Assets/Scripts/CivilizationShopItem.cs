@@ -18,6 +18,7 @@ public class CivilizationShopItem : MonoBehaviour, IPointerClickHandler
                 GameObject g = eventData.pointerClick;
                 g.transform.GetChild(0).gameObject.SetActive(false);
                 PlayerPrefs.SetInt(playerPrefsName, 1);
+                CivilizationStarManager.instance.CheckStars();
             }
         }
     }
