@@ -66,6 +66,6 @@ public class MillGameManager : MonoBehaviour
     {
         winPanel.SetActive(true);
         PlayerPrefs.SetString("MillGameLevel1", "true");
-        MoneyManager.instance.money += 125;
+        //MoneyManager.instance.money += 125;
     }
 }

@@ -292,7 +292,7 @@ GameObject:
   - component: {fileID: 145808908}
   - component: {fileID: 145808907}
   m_Layer: 5
-  m_Name: GoldAmount
+  m_Name: TxtGoldAmount
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -534,7 +534,6 @@ MonoBehaviour:
   - {fileID: 248254982}
   - {fileID: 853214564}
   selectedAvatar: {fileID: 290794549}
-  goldAmount: 12000
 --- !u!4 &202609097
 Transform:
   m_ObjectHideFlags: 0
@@ -1312,7 +1311,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &516778629
 Transform:
   m_ObjectHideFlags: 0
@@ -1342,7 +1341,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   txtUsername: {fileID: 405010391}
   txtLevel: {fileID: 1555335099}
-  txtGoldAmount: {fileID: 0}
   avatars: []
 --- !u!1 &654439769
 GameObject:

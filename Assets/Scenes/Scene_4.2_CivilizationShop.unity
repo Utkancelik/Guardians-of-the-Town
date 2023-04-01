@@ -575,7 +575,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unlocked: 0
-  cost: 0
+  cost: 870
   playerPrefsName: Army_2
 --- !u!1 &87993571
 GameObject:
@@ -1042,7 +1042,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unlocked: 1
-  cost: 0
+  cost: 200
   playerPrefsName: Army_0
 --- !u!1 &215880363
 GameObject:
@@ -2297,7 +2297,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unlocked: 0
-  cost: 0
+  cost: 200
   playerPrefsName: Commerce_0
 --- !u!1 &525161986
 GameObject:
@@ -2824,7 +2824,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unlocked: 0
-  cost: 0
+  cost: 450
   playerPrefsName: Commerce_1
 --- !u!1 &672331863
 GameObject:
@@ -2917,7 +2917,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unlocked: 0
-  cost: 0
+  cost: 870
   playerPrefsName: Science_2
 --- !u!1 &674611065
 GameObject:
@@ -3254,7 +3254,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unlocked: 0
-  cost: 0
+  cost: 870
   playerPrefsName: Industry_2
 --- !u!1 &694298673
 GameObject:
@@ -3532,7 +3532,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unlocked: 0
-  cost: 0
+  cost: 870
   playerPrefsName: Discovery_2
 --- !u!1 &715780128
 GameObject:
@@ -4081,7 +4081,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unlocked: 0
-  cost: 0
+  cost: 200
   playerPrefsName: Industry_0
 --- !u!1 &813460805
 GameObject:
@@ -4917,7 +4917,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unlocked: 0
-  cost: 0
+  cost: 450
   playerPrefsName: Industry_1
 --- !u!1 &955116667
 GameObject:
@@ -5472,7 +5472,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unlocked: 0
-  cost: 0
+  cost: 450
   playerPrefsName: Science_1
 --- !u!1 &1042145132
 GameObject:
@@ -5921,7 +5921,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unlocked: 0
-  cost: 0
+  cost: 200
   playerPrefsName: Weapon_0
 --- !u!1 &1145040585
 GameObject:
@@ -6372,7 +6372,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unlocked: 0
-  cost: 0
+  cost: 450
   playerPrefsName: Culture_1
 --- !u!1 &1253539738
 GameObject:
@@ -7045,7 +7045,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unlocked: 0
-  cost: 0
+  cost: 870
   playerPrefsName: Culture_2
 --- !u!1 &1326189122
 GameObject:
@@ -7483,7 +7483,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unlocked: 0
-  cost: 0
+  cost: 200
   playerPrefsName: Science_0
 --- !u!1 &1424798369
 GameObject:
@@ -7996,7 +7996,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unlocked: 0
-  cost: 0
+  cost: 200
   playerPrefsName: Culture_0
 --- !u!1 &1518080794
 GameObject:
@@ -8165,7 +8165,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unlocked: 0
-  cost: 0
+  cost: 870
   playerPrefsName: Commerce_2
 --- !u!1 &1568095047
 GameObject:
@@ -8772,7 +8772,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unlocked: 0
-  cost: 0
+  cost: 450
   playerPrefsName: Army_1
 --- !u!1 &1699937159
 GameObject:
@@ -9233,7 +9233,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unlocked: 0
-  cost: 0
+  cost: 870
   playerPrefsName: Weapon_2
 --- !u!1 &1772181424
 GameObject:
@@ -9326,7 +9326,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unlocked: 0
-  cost: 0
+  cost: 200
   playerPrefsName: Discovery_0
 --- !u!1 &1797046757
 GameObject:
@@ -9671,7 +9671,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unlocked: 0
-  cost: 0
+  cost: 450
   playerPrefsName: Discovery_1
 --- !u!1 &1878625491
 GameObject:
@@ -10564,7 +10564,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unlocked: 0
-  cost: 0
+  cost: 450
   playerPrefsName: Weapon_1
 --- !u!1 &2092586284
 GameObject:

@@ -19,6 +19,8 @@ public class CivilizationShopItem : MonoBehaviour, IPointerClickHandler
                 g.transform.GetChild(0).gameObject.SetActive(false);
                 PlayerPrefs.SetInt(playerPrefsName, 1);
                 CivilizationStarManager.instance.CheckStars();
+                MoneyManager.instance.money -= cost;
+                PlayerPrefs.SetInt("Money", MoneyManager.instance.money);
             }
         }
     }

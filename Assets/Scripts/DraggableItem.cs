@@ -40,7 +40,7 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 
         image.raycastTarget = true;
 
-        if (SceneManager.GetActiveScene().name == "Scene_8.0_MillGameLevel1")
+        if (GameManager.Instance.State == GameManager.GameStates.MillGame)
         {
             if (MillGameManager.Instance.matchingSlot1.transform.childCount == 1 &&
             MillGameManager.Instance.matchingSlot2.transform.childCount == 1)
@@ -48,7 +48,7 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
                 MillGameManager.Instance.CheckSlotItems();
             }
         }
-        else if(SceneManager.GetActiveScene().name == "Scene_8.1_CastleGameLevel1")
+        else if(GameManager.Instance.State == GameManager.GameStates.CastleGame)
         {
             int childCountSlot1 = CastleGameManager.instance.slots[0].transform.childCount;
             int childCountSlot2 = CastleGameManager.instance.slots[1].transform.childCount;

@@ -697,7 +697,7 @@ GameObject:
   - component: {fileID: 320328238}
   - component: {fileID: 320328237}
   m_Layer: 5
-  m_Name: GoldAmount
+  m_Name: TxtGoldAmount
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1001,7 +1001,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   txtUsername: {fileID: 405010391}
   txtLevel: {fileID: 1555335099}
-  txtGoldAmount: {fileID: 320328237}
   avatars:
   - {fileID: 1375705964}
   - {fileID: 1908299861}
@@ -1653,6 +1652,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b18ea1e246917e4a875e002a5209654, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  txtGoldAmount: {fileID: 320328237}
   money: 12000
 --- !u!1 &1120425528
 GameObject:

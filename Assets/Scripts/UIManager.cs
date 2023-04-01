@@ -5,19 +5,26 @@ using UnityEngine;
 
 public class UIManager : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI txtUsername, txtLevel, txtGoldAmount;
+    [SerializeField] private TextMeshProUGUI txtUsername, txtLevel;
 
     public GameObject[] avatars;
     private void Start()
     {
         txtUsername.text = PlayerPrefs.GetString("Username");
 
-        foreach (GameObject avatar in avatars)
+
+        if (avatars.Length != 0)
         {
-            avatar.SetActive(false);
+            foreach (GameObject avatar in avatars)
+            {
+                avatar.SetActive(false);
+            }
+
+            int selectedAvatarIndex = PlayerPrefs.GetInt("SelectedAvatar",4);
+            avatars[selectedAvatarIndex].SetActive(true);
+
         }
 
-        int selectedAvatarIndex = PlayerPrefs.GetInt("SelectedAvatar");
-        avatars[selectedAvatarIndex].SetActive(true);
+        MoneyManager.instance.UpdateGoldAmount(GameObject.Find("TxtGoldAmount").GetComponent<TextMeshProUGUI>());
     }
 }
