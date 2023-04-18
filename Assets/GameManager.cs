@@ -10,6 +10,8 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         Instance = this;
+
+        MusicController.instance.LowVolume();   
     }
 
     public enum GameStates

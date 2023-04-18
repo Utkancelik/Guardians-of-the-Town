@@ -9,7 +9,7 @@ public class ButtonController : MonoBehaviour
     private Button levelButton;
 
     [SerializeField] private TMP_Text buttonText;
-    [SerializeField] private GameObject lockIconObject, starsIconObject, Panel_Indtroduction;
+    [SerializeField] private GameObject lockIconObject, starsIconObject, Panel_Indtroduction_TR, Panel_Indtroduction_FIN;
 
     public int buttonValue, levelTextValue;
     private bool isComplete;
@@ -17,7 +17,8 @@ public class ButtonController : MonoBehaviour
 
     private void Start()
     {
-        Panel_Indtroduction.SetActive(false);
+        Panel_Indtroduction_TR.SetActive(false);
+        Panel_Indtroduction_FIN.SetActive(false);
         levelButton = GetComponent<Button>();
         levelButton.onClick.AddListener(LoadSelectedScene);
     }
@@ -44,8 +45,15 @@ public class ButtonController : MonoBehaviour
 
     private IEnumerator DelayedLoad()
     {
-        Panel_Indtroduction.SetActive(true);
-        yield return new WaitForSeconds(2f);
+        if (PlayerPrefs.GetString("Language") == "Turkish")
+        {
+            Panel_Indtroduction_TR.SetActive(true);
+        }
+        else if(PlayerPrefs.GetString("Language") == "Finnish")
+        {
+            Panel_Indtroduction_FIN.SetActive(true);
+        }
+        yield return new WaitForSeconds(10f);
         if (isComplete)
         {
             SceneManager.LoadScene(buttonValue);
