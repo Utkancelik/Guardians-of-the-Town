@@ -15,6 +15,8 @@ public class ButtonController : MonoBehaviour
     private bool isComplete;
 
 
+    public float delayedLoadSeconds = 10.0f;
+
     private void Start()
     {
         Panel_Indtroduction_TR.SetActive(false);
@@ -53,7 +55,7 @@ public class ButtonController : MonoBehaviour
         {
             Panel_Indtroduction_FIN.SetActive(true);
         }
-        yield return new WaitForSeconds(10f);
+        yield return new WaitForSeconds(delayedLoadSeconds);
         if (isComplete)
         {
             SceneManager.LoadScene(buttonValue);

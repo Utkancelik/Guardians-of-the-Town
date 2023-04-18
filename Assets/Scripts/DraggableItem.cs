@@ -68,6 +68,10 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        audioSource.Play();
+        if (GameManager.Instance.State == GameManager.GameStates.MillGame)
+        {
+            audioSource.Play();
+        }
+        
     }
 }

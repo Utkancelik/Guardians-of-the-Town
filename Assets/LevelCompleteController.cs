@@ -28,6 +28,9 @@ public class LevelCompleteController : MonoBehaviour
 
         MoneyManager.instance.money += 125;
         PlayerPrefs.SetInt("Money", MoneyManager.instance.money);
+        int experience = PlayerPrefs.GetInt("Experience");
+        experience += 3;
+        PlayerPrefs.SetInt("Experience", experience);
 
         SceneManager.LoadScene(levelsMenu);
     }

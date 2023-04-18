@@ -12,10 +12,42 @@ public class MillGameManager : MonoBehaviour
 
     public int score = 0;
     public GameObject winPanel;
+
+    public GameObject[] _Tr_Objects;
+    public GameObject[] _Fin_Objects;
+
+    public AudioSource wrongSound, correctSound, endGameSound;
     private void Awake()
     {
         Instance = this;
         winPanel.SetActive(false);
+    }
+
+    private void Start()
+    {
+        if (PlayerPrefs.GetString("Language") == "Turkish")
+        {
+            foreach (GameObject item in _Fin_Objects)
+            {
+                item.SetActive(false);
+            }
+            foreach (GameObject item in _Tr_Objects)
+            {
+                item.SetActive(true);
+            }
+        }
+        else if (PlayerPrefs.GetString("Language") == "Finnish")
+        {
+            foreach (GameObject item in _Tr_Objects)
+            {
+                item.SetActive(false);
+            }
+            foreach (GameObject item in _Fin_Objects)
+            {
+                item.SetActive(true);
+            }
+            
+        }
     }
 
     public void CheckSlotItems()
@@ -42,6 +74,7 @@ public class MillGameManager : MonoBehaviour
         yield return new WaitForSeconds(1);
         Destroy(slotItem1);
         Destroy(slotItem2);
+        correctSound.Play();
         yield return new WaitForSeconds(.1f);
         int items = GameObject.FindGameObjectsWithTag("Item").Length;
 
@@ -55,6 +88,8 @@ public class MillGameManager : MonoBehaviour
     private IEnumerator WrongMatch()
     {
         yield return new WaitForSeconds(1);
+        wrongSound.Play();
+
         draggableItem1.parentAfterDrag = draggableItem1.originalParent;
         draggableItem2.parentAfterDrag = draggableItem2.originalParent;
 
@@ -64,6 +99,7 @@ public class MillGameManager : MonoBehaviour
 
     private void Win()
     {
+        endGameSound.Play();
         winPanel.SetActive(true);
         PlayerPrefs.SetString("MillGameLevel1", "true");
         //MoneyManager.instance.money += 125;

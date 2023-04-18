@@ -16,7 +16,7 @@ public class ShopManager : MonoBehaviour
     {
         CheckLocks();
 
-        int selectedIndex = PlayerPrefs.GetInt("SelectedAvatar");
+        int selectedIndex = PlayerPrefs.GetInt("SelectedAvatar", 4);
         GameObject g = GameObject.Find("Costums").transform.GetChild(selectedIndex).Find("Costum").gameObject;
         selectedAvatar.GetComponent<Image>().sprite = g.GetComponent<Image>().sprite;
     }

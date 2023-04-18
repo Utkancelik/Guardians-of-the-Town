@@ -9,6 +9,9 @@ public class BlacksmithGameManager : MonoBehaviour
     private int trueSlotNumber = 0;
     public GameObject[] slots;
     public GameObject winPanel;
+
+
+    public AudioSource correctSound, wrongSound, endGameSound;
     private void Awake()
     {
         Instance = this;
@@ -25,6 +28,7 @@ public class BlacksmithGameManager : MonoBehaviour
             {
                 blacksmithGameObject.isClicked = true;
                 obj.GetComponent<Image>().color = Color.green;
+                correctSound.Play();
                 trueSlotNumber++;
             }
 
@@ -49,6 +53,7 @@ public class BlacksmithGameManager : MonoBehaviour
     {
         obj.GetComponent<Image>().color = Color.red;
         trueSlotNumber = 0;
+        wrongSound.Play();
         yield return new WaitForSeconds(.5f);
         for (int i = 0; i < slots.Length; i++)
         {
@@ -66,6 +71,7 @@ public class BlacksmithGameManager : MonoBehaviour
         yield return new WaitForSeconds(.5f);
         PlayerPrefs.SetString("BlacksmithGameLevel1", "true");
         winPanel.SetActive(true);
+        endGameSound.Play();
 
     }
 

@@ -375,6 +375,11 @@ MonoBehaviour:
   matchingSlot2: {fileID: 1989890577}
   score: 0
   winPanel: {fileID: 1925523643}
+  _Tr_Objects: []
+  _Fin_Objects: []
+  wrongSound: {fileID: 1085779194}
+  correctSound: {fileID: 1085779195}
+  endGameSound: {fileID: 1085779193}
 --- !u!1 &101339930
 GameObject:
   m_ObjectHideFlags: 0
@@ -2606,6 +2611,78 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1033058060}
   m_CullTransparentMesh: 1
+--- !u!1001 &1085779192
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1784301666130047418, guid: 55279935c5a2b5e4d894e522bfc751b9, type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1784301666130047418, guid: 55279935c5a2b5e4d894e522bfc751b9, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1784301666130047418, guid: 55279935c5a2b5e4d894e522bfc751b9, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1784301666130047418, guid: 55279935c5a2b5e4d894e522bfc751b9, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1784301666130047418, guid: 55279935c5a2b5e4d894e522bfc751b9, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1784301666130047418, guid: 55279935c5a2b5e4d894e522bfc751b9, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1784301666130047418, guid: 55279935c5a2b5e4d894e522bfc751b9, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1784301666130047418, guid: 55279935c5a2b5e4d894e522bfc751b9, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1784301666130047418, guid: 55279935c5a2b5e4d894e522bfc751b9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1784301666130047418, guid: 55279935c5a2b5e4d894e522bfc751b9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1784301666130047418, guid: 55279935c5a2b5e4d894e522bfc751b9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1784301666130047419, guid: 55279935c5a2b5e4d894e522bfc751b9, type: 3}
+      propertyPath: m_Name
+      value: Audio Effects
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 55279935c5a2b5e4d894e522bfc751b9, type: 3}
+--- !u!82 &1085779193 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 1784301666330493021, guid: 55279935c5a2b5e4d894e522bfc751b9, type: 3}
+  m_PrefabInstance: {fileID: 1085779192}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &1085779194 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 1784301665967338290, guid: 55279935c5a2b5e4d894e522bfc751b9, type: 3}
+  m_PrefabInstance: {fileID: 1085779192}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &1085779195 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 1784301664954125716, guid: 55279935c5a2b5e4d894e522bfc751b9, type: 3}
+  m_PrefabInstance: {fileID: 1085779192}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1156278395
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3785,23 +3862,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d7d4bae9245e3d44a398bcd97d902d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameStarted: 0
-  audioSourceIntroduction: {fileID: 0}
-  audioSources:
-  - {fileID: 283178451}
-  - {fileID: 627128351}
-  - {fileID: 2021625538}
-  - {fileID: 214784592}
-  - {fileID: 1948511566}
-  - {fileID: 1731854216}
-  - {fileID: 999013754}
-  - {fileID: 2078926516}
-  - {fileID: 2098972011}
-  - {fileID: 1647104493}
-  - {fileID: 913149472}
-  - {fileID: 1697080784}
-  castleGameAudioSource: {fileID: 0}
-  blacksmithGameAudioSource: {fileID: 0}
+  CastleGameClip_TR: {fileID: 0}
+  CastleGameClip_FIN: {fileID: 0}
 --- !u!1 &1669541534
 GameObject:
   m_ObjectHideFlags: 0
