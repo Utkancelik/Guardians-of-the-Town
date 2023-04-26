@@ -21,15 +21,15 @@ public class MusicController : MonoBehaviour
 
     public void LowVolume()
     {
-        musicObj.GetComponent<AudioSource>().volume = .1f;
+        musicObj.GetComponent<AudioSource>().volume = .05f;
     }
 
     public void MidVolume()
     {
-        musicObj.GetComponent<AudioSource>().volume = .5f;
+        musicObj.GetComponent<AudioSource>().volume = .3f;
     }
     public void HighVolume()
     {
-        musicObj.GetComponent<AudioSource>().volume = .9f;
+        musicObj.GetComponent<AudioSource>().volume = .8f;
     }
 }
