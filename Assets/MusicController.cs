@@ -14,6 +14,11 @@ public class MusicController : MonoBehaviour
         HighVolume();
     }
 
+    public void VolumeOff()
+    {
+        musicObj.GetComponent<AudioSource>().volume = .0f;
+    }
+
     public void LowVolume()
     {
         musicObj.GetComponent<AudioSource>().volume = .1f;
