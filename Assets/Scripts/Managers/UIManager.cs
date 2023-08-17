@@ -5,14 +5,18 @@ using UnityEngine;
 
 public class UIManager : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI txtUsername, txtLevel;
-
+    // gold miktarimizi gosteren textmeshpro
+    [SerializeField]private TextMeshProUGUI TMP_goldAmount;
+    // tum avatarlari depoledigimiz yer
     public GameObject[] avatars;
-    private void Start()
+    // awake'te tmp componenti ne erisiyorujz
+    public void Awake()
     {
-        txtUsername.text = PlayerPrefs.GetString("Username");
-
-
+        TMP_goldAmount = GameObject.FindGameObjectWithTag("TMP_GoldAmount").GetComponent<TextMeshProUGUI>();
+    }
+    public void Start()
+    {
+        // avatarlarin hepsini kapat playerprefstekini ac.
         if (avatars.Length != 0)
         {
             foreach (GameObject avatar in avatars)
@@ -24,7 +28,7 @@ public class UIManager : MonoBehaviour
             avatars[selectedAvatarIndex].SetActive(true);
 
         }
-
-        MoneyManager.instance.UpdateGoldAmount(GameObject.Find("TxtGoldAmount").GetComponent<TextMeshProUGUI>());
+        // para miktarimizi guncelle
+        MoneyManager.instance.UpdateGoldAmount(TMP_goldAmount);
     }
 }

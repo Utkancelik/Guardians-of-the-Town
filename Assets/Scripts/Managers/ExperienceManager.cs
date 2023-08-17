@@ -5,14 +5,20 @@ using UnityEngine.UI;
 
 public class ExperienceManager : MonoBehaviour
 {
-    public Image Lvl_Rozet;
+    [SerializeField] private Image Rozet;
 
     public Sprite lvl1, lvl2, lvl3, lvl4, lvl5, lvl6;
 
 
     public int experience = 0;
 
-    public Slider experienceSlider;
+    [SerializeField] private Slider experienceSlider;
+
+    private void Awake()
+    {
+        Rozet = GameObject.FindGameObjectWithTag("Rozet").GetComponent<Image>();
+        experienceSlider = GameObject.FindGameObjectWithTag("Slider").GetComponent<Slider>();
+    }
     private void Start()
     {
         experience = PlayerPrefs.GetInt("Experience", 0);
@@ -21,27 +27,27 @@ public class ExperienceManager : MonoBehaviour
 
         if (experience >= 0 && experience < 10)
         {
-            Lvl_Rozet.sprite = lvl1;
+            Rozet.sprite = lvl1;
         }
         else if (experience >= 10 && experience < 20)
         {
-            Lvl_Rozet.sprite = lvl2;
+            Rozet.sprite = lvl2;
         }
         else if (experience >= 20 && experience < 30)
         {
-            Lvl_Rozet.sprite = lvl3;
+            Rozet.sprite = lvl3;
         }
         else if (experience >= 30 && experience < 40)
         {
-            Lvl_Rozet.sprite = lvl4;
+            Rozet.sprite = lvl4;
         }
         else if (experience >= 40 && experience < 50)
         {
-            Lvl_Rozet.sprite = lvl5;
+            Rozet.sprite = lvl5;
         }
         else if (experience >= 50)
         {
-            Lvl_Rozet.sprite = lvl6;
+            Rozet.sprite = lvl6;
         }
     }
 }

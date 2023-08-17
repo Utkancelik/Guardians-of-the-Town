@@ -7,6 +7,9 @@ TagManager:
   - Item
   - Avatar
   - Music
+  - TMP_GoldAmount
+  - Rozet
+  - Slider
   layers:
   - Default
   - TransparentFX
