@@ -2,8 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum MillGameModes
+{
+    FirstLetter,
+    LastLetter,
+    Rhyme
+}
 public class MillGameManager : MonoBehaviour
 {
+    // ilk harf, son harf ya da okunus sekli modlarindan birini sececegiz
+    public MillGameModes millGameMode;
+
     public GameObject matchingSlot1, matchingSlot2;
     public static MillGameManager Instance;
 
@@ -46,7 +55,7 @@ public class MillGameManager : MonoBehaviour
             {
                 item.SetActive(true);
             }
-            
+
         }
     }
 
@@ -58,15 +67,28 @@ public class MillGameManager : MonoBehaviour
         draggableItem1 = slotItem1.GetComponent<DraggableItem>();
         draggableItem2 = slotItem2.GetComponent<DraggableItem>();
 
-        if (slotItem1.name[0] == slotItem2.name[0])
+        switch (millGameMode)
         {
-            StartCoroutine(TrueMatch());
+            case MillGameModes.FirstLetter:
+                if (slotItem1.name[0] == slotItem2.name[0])
+                    StartCoroutine(TrueMatch());
+                else
+                    StartCoroutine(WrongMatch());
+                break;
+            case MillGameModes.LastLetter:
+                if (slotItem1.name[slotItem1.name.Length - 1] == slotItem2.name[slotItem2.name.Length - 1])
+                    StartCoroutine(TrueMatch());
+                else
+                    StartCoroutine(WrongMatch());
+                break;
+            case MillGameModes.Rhyme:
+                //TODO
+                // buraya okunusu ayni olanlari check edecek bir sistem kur.
+                //TODO
+                break;
+            default:
+                break;
         }
-        else
-        {
-            StartCoroutine(WrongMatch());
-        }
-
     }
 
     private IEnumerator TrueMatch()
@@ -101,7 +123,7 @@ public class MillGameManager : MonoBehaviour
     {
         endGameSound.Play();
         winPanel.SetActive(true);
-        PlayerPrefs.SetString("MillGameLevel1", "true");
+        //PlayerPrefs.SetString("MillGameLevel1", "true");
         //MoneyManager.instance.money += 125;
     }
 }

@@ -40,7 +40,7 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 
         image.raycastTarget = true;
 
-        if (GameManager.Instance.State == GameManager.GameStates.MillGame)
+        if (GameManager.Instance.State == GameStates.MillGame)
         {
             if (MillGameManager.Instance.matchingSlot1.transform.childCount == 1 &&
             MillGameManager.Instance.matchingSlot2.transform.childCount == 1)
@@ -48,7 +48,7 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
                 MillGameManager.Instance.CheckSlotItems();
             }
         }
-        else if(GameManager.Instance.State == GameManager.GameStates.CastleGame)
+        else if(GameManager.Instance.State == GameStates.CastleGame)
         {
             int childCountSlot1 = CastleGameManager.instance.slots[0].transform.childCount;
             int childCountSlot2 = CastleGameManager.instance.slots[1].transform.childCount;
@@ -68,7 +68,7 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        if (GameManager.Instance.State == GameManager.GameStates.MillGame)
+        if (GameManager.Instance.State == GameStates.MillGame)
         {
             audioSource.Play();
         }

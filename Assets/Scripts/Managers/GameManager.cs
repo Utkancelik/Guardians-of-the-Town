@@ -2,6 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum GameStates
+{
+    MillGame,
+    CastleGame,
+    BlacksmithGame
+}
+
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
@@ -11,14 +18,9 @@ public class GameManager : MonoBehaviour
     {
         Instance = this;
 
-        MusicController.instance.LowVolume();   
+        MusicController.instance.LowVolume();
     }
 
-    public enum GameStates
-    {
-        MillGame,
-        CastleGame,
-        BlacksmithGame
-    }
+
 
 }

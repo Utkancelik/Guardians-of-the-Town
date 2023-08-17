@@ -48,7 +48,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Other Scenes (Not removed, will be working on these later)/Scene_6.2_Easy_BlacksmithGameLevels.unity
     guid: ea48da6b16371aa4fa5326457bc40509
   - enabled: 1
-    path: Assets/Scenes/Present Scenes (Currently working on these)/6_MillGameIntroductionScene.unity
+    path: Assets/Scenes/Old Scenes (Removed from the game)/6_MillGameIntroductionScene.unity
     guid: 7efab31ce2a458240a733982d665903d
   - enabled: 0
     path: Assets/Scenes/Other Scenes (Not removed, will be working on these later)/Scene_7.1_CastleGameLevelIntroduction.unity
@@ -57,7 +57,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Other Scenes (Not removed, will be working on these later)/Scene_7.2_BlacksmithGameLevelIntroduction.unity
     guid: 1e21573acb558f341a3a6fb0a077b9f4
   - enabled: 1
-    path: Assets/Scenes/Present Scenes (Currently working on these)/7_MillGame.unity
+    path: Assets/Scenes/Present Scenes (Currently working on these)/6_MillGame.unity
     guid: d39a517ee8dc3de499cb9d8560aaa222
   - enabled: 0
     path: Assets/Scenes/Old Scenes (Removed from the game)/Scene_8.0_MillGameLevel2.unity

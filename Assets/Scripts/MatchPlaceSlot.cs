@@ -8,14 +8,14 @@ public class MatchPlaceSlot : MonoBehaviour, IDropHandler, IPointerClickHandler
 {
     public void OnDrop(PointerEventData eventData)
     {
-        if (GameManager.Instance.State == GameManager.GameStates.MillGame)
+        if (GameManager.Instance.State == GameStates.MillGame)
         {
             GameObject droppedItem = eventData.pointerDrag;
             DraggableItem draggableItem = droppedItem.GetComponent<DraggableItem>();
             draggableItem.parentAfterDrag = transform;
             draggableItem.audioSource.Play();
         }
-        else if(GameManager.Instance.State == GameManager.GameStates.CastleGame)
+        else if(GameManager.Instance.State == GameStates.CastleGame)
         {
             if(transform.childCount == 0)
             {
@@ -29,7 +29,7 @@ public class MatchPlaceSlot : MonoBehaviour, IDropHandler, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        if (GameManager.Instance.State == GameManager.GameStates.BlacksmithGame)
+        if (GameManager.Instance.State == GameStates.BlacksmithGame)
         {
             GameObject clickedItem = eventData.pointerClick;
             BlacksmithGameManager.Instance.CheckSlotContext(clickedItem.transform.GetChild(0).gameObject);

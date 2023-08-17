@@ -50,7 +50,7 @@ public class LevelManagerCopy : MonoBehaviour
 
     public void LoadCompleteLevels()
     {
-        if(GameManager.Instance.State == GameManager.GameStates.MillGame)
+        if(GameManager.Instance.State == GameStates.MillGame)
         {
             if (PlayerPrefs.GetInt("LevelIndex") == 0)
             {
