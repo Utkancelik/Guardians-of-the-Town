@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.UI;
 using UnityEngine;
 
 public class RandomItemGenerator : MonoBehaviour
@@ -26,8 +27,74 @@ public class RandomItemGenerator : MonoBehaviour
 
         AddingRandomSelectedItemsToItemSlotsRandomly();
     }
-
     private void ChooseRandomItems(List<GameObject> ItemsPrefab)
+    {
+        switch (MillGameManager.Instance.millGameMode)
+        {
+            case MillGameModes.FirstLetter:
+                ChooseRandomItems_FirstLetterGame(ItemsPrefab);
+                break;
+            case MillGameModes.LastLetter:
+                ChooseRandomItems_LastLetterGame(ItemsPrefab);
+                break;
+            case MillGameModes.Rhyme:
+                ChooseRandomItems_RhymeGame(ItemsPrefab);
+                break;
+            default:
+                break;
+        }
+    }
+    private void ChooseRandomItems_FirstLetterGame(List<GameObject> ItemsPrefab)
+    {
+        for (int i = 0; i < totalMatchCount; i++)
+        {
+            // 0 ile toplam prefab sayýsý (12) ile arasýnda random bir sayý belirle
+            int randomItem = Random.Range(0, ItemsPrefab.Count);
+            // çýkan sayý indexindeki objeyi tut
+            GameObject selectedItem = Instantiate(ItemsPrefab[randomItem]);
+            // bu objeyi ilk eleman olarak selected item listesine ekle
+            SelectedItems.Add(selectedItem);
+            ItemsPrefab.RemoveAt(randomItem);
+            // çýkan sayýnýn indexinde bulunan prefabin ilk harfini al
+            char firstLetter = selectedItem.name[0];
+            // ayný harften bir obje bulana kadar random at
+            int randomItemWithSameFirstLetter = Random.Range(0, ItemsPrefab.Count);
+            while (ItemsPrefab[randomItemWithSameFirstLetter].name[0] != firstLetter)
+            {
+                randomItemWithSameFirstLetter = Random.Range(0, ItemsPrefab.Count);
+            }
+            GameObject newItemWitheSameFirstLetter = Instantiate(ItemsPrefab[randomItemWithSameFirstLetter]);
+            SelectedItems.Add(newItemWitheSameFirstLetter);
+            ItemsPrefab.RemoveAt(randomItemWithSameFirstLetter);
+        }
+    }
+
+    private void ChooseRandomItems_LastLetterGame(List<GameObject> ItemsPrefab)
+    {
+        for (int i = 0; i < totalMatchCount; i++)
+        {
+            // 0 ile toplam prefab sayýsý (12) ile arasýnda random bir sayý belirle
+            int randomItem = Random.Range(0, ItemsPrefab.Count);
+            // çýkan sayý indexindeki objeyi tut
+            GameObject selectedItem = Instantiate(ItemsPrefab[randomItem]);
+            // bu objeyi ilk eleman olarak selected item listesine ekle
+            SelectedItems.Add(selectedItem);
+            ItemsPrefab.RemoveAt(randomItem);
+            // çýkan sayýnýn indexinde bulunan prefabin ilk harfini al
+            char lastLetter = selectedItem.name[selectedItem.name.Length - 1];
+            // ayný harften bir obje bulana kadar random at
+            int randomItemWithSameLastLetter = Random.Range(0, ItemsPrefab.Count);
+            while (ItemsPrefab[randomItemWithSameLastLetter].name[ItemsPrefab[randomItemWithSameLastLetter].name.Length - 1] != lastLetter)
+            {
+                randomItemWithSameLastLetter = Random.Range(0, ItemsPrefab.Count);
+            }
+            GameObject newItemWitheSameLastLetter = Instantiate(ItemsPrefab[randomItemWithSameLastLetter]);
+            SelectedItems.Add(newItemWitheSameLastLetter);
+            ItemsPrefab.RemoveAt(randomItemWithSameLastLetter);
+        }
+    }
+
+    private void ChooseRandomItems_RhymeGame(List<GameObject> ItemsPrefab)
     {
         for (int i = 0; i < totalMatchCount; i++)
         {
