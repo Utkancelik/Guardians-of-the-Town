@@ -7,6 +7,8 @@ public class RandomItemGenerator : MonoBehaviour
     [SerializeField] private List<GameObject> TurkishItemsPrefab = new List<GameObject>();
     [SerializeField] private List<GameObject> FinnishItemsPrefabs = new List<GameObject>();
     [SerializeField] private List<GameObject> SelectedItems = new List<GameObject>();
+    [SerializeField] private List<GameObject> ItemSlots = new List<GameObject>();
+
 
     [SerializeField] private int totalMatchCount = 4;
     private void Start()
@@ -21,6 +23,8 @@ public class RandomItemGenerator : MonoBehaviour
         {
             ChooseRandomItems(FinnishItemsPrefabs);
         }
+
+        AddingRandomSelectedItemsToItemSlotsRandomly();
     }
 
     private void ChooseRandomItems(List<GameObject> ItemsPrefab)
@@ -30,7 +34,7 @@ public class RandomItemGenerator : MonoBehaviour
             // 0 ile toplam prefab sayýsý (12) ile arasýnda random bir sayý belirle
             int randomItem = Random.Range(0, ItemsPrefab.Count);
             // çýkan sayý indexindeki objeyi tut
-            GameObject selectedItem = ItemsPrefab[randomItem];
+            GameObject selectedItem = Instantiate(ItemsPrefab[randomItem]);
             // bu objeyi ilk eleman olarak selected item listesine ekle
             SelectedItems.Add(selectedItem);
             ItemsPrefab.RemoveAt(randomItem);
@@ -42,9 +46,23 @@ public class RandomItemGenerator : MonoBehaviour
             {
                 randomItemWithSameFirstLetter = Random.Range(0, ItemsPrefab.Count);
             }
-            GameObject newItemWitheSameFirstLetter = ItemsPrefab[randomItemWithSameFirstLetter];
+            GameObject newItemWitheSameFirstLetter = Instantiate(ItemsPrefab[randomItemWithSameFirstLetter]);
             SelectedItems.Add(newItemWitheSameFirstLetter);
             ItemsPrefab.RemoveAt(randomItemWithSameFirstLetter);
+        }
+    }
+
+    private void AddingRandomSelectedItemsToItemSlotsRandomly()
+    {
+        for (int i = 0; i < ItemSlots.Count; i++)
+        {
+            int random = Random.Range(0, SelectedItems.Count);
+
+            GameObject randomSelectedItem = SelectedItems[random];
+
+            randomSelectedItem.transform.SetParent(ItemSlots[i].transform);
+
+            SelectedItems.RemoveAt(random);
         }
     }
 }

@@ -22,9 +22,6 @@ public class MillGameManager : MonoBehaviour
     public int score = 0;
     public GameObject winPanel;
 
-    public GameObject[] _Tr_Objects;
-    public GameObject[] _Fin_Objects;
-
     public AudioSource wrongSound, correctSound, endGameSound;
     private void Awake()
     {
@@ -34,29 +31,7 @@ public class MillGameManager : MonoBehaviour
 
     private void Start()
     {
-        if (PlayerPrefs.GetString("Language") == "Turkish")
-        {
-            foreach (GameObject item in _Fin_Objects)
-            {
-                item.SetActive(false);
-            }
-            foreach (GameObject item in _Tr_Objects)
-            {
-                item.SetActive(true);
-            }
-        }
-        else if (PlayerPrefs.GetString("Language") == "Finnish")
-        {
-            foreach (GameObject item in _Tr_Objects)
-            {
-                item.SetActive(false);
-            }
-            foreach (GameObject item in _Fin_Objects)
-            {
-                item.SetActive(true);
-            }
-
-        }
+        
     }
 
     public void CheckSlotItems()

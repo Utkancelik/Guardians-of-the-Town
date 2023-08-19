@@ -5,8 +5,15 @@ using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+public enum Language
+{
+    Turkish,
+    Finnish
+}
 public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IPointerClickHandler
 {
+    public Language languageOfItem;
+
     [HideInInspector] public Transform parentAfterDrag, originalParent;
     private Image image;
 
@@ -16,6 +23,21 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         audioSource = GetComponent<AudioSource>();
         image = GetComponent<Image>();
         originalParent = transform.parent;
+    }
+    private void Start()
+    {
+        string language = PlayerPrefs.GetString("Language");
+
+        gameObject.SetActive(false);
+
+        if (language == "Turkish" && languageOfItem == Language.Turkish)
+        {
+            gameObject.SetActive(true);   
+        }
+        else if (language == "Finnish" && languageOfItem == Language.Finnish)
+        {
+            gameObject.SetActive(true);
+        }
     }
     public void OnBeginDrag(PointerEventData eventData)
     {
