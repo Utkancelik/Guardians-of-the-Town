@@ -1300,6 +1300,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5b938ab27ba3c84ebe33daa4e27d31a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TurkishItemsPrefab:
+  - {fileID: 3561037511839887428, guid: 9695d0c5c5d82b445b6e9a918774f21b, type: 3}
+  - {fileID: 3547942335307429058, guid: afc37afc767f6b641ae4bd4644d893f8, type: 3}
+  - {fileID: 3335773220725908463, guid: 7b1bdf335b3f6e844aefc1b66fb16727, type: 3}
+  - {fileID: 6490781403788313835, guid: 892d5e8564b21074991829ff128c4c89, type: 3}
+  - {fileID: 9024025458152486145, guid: 6448c43cfdd88484492759d9a5d7f76d, type: 3}
+  - {fileID: 572156763141436264, guid: 80e4caea0e3151046b1165115cc807c1, type: 3}
+  - {fileID: 9126283481176254650, guid: f0385ecdaa77b2944aa96db687d7bb1a, type: 3}
+  - {fileID: 2549548891073480368, guid: 3ca568687c970d6499d24b3364d13faf, type: 3}
+  - {fileID: 6132879772281251777, guid: 4f3fd4970aa74fd44b9597f4575e21dc, type: 3}
+  - {fileID: 8923790852509999444, guid: d2bb8b12154003747a3f46a80a86f67d, type: 3}
+  - {fileID: 1956211394237152624, guid: 14422ad5eaf4e3249b879c804ce929d0, type: 3}
+  - {fileID: 5155495327292711419, guid: 99d22eba75badb8418673ca02caff304, type: 3}
+  FinnishItemsPrefabs: []
+  SelectedItems: []
+  totalMatchCount: 4
 --- !u!1001 &793798544
 PrefabInstance:
   m_ObjectHideFlags: 0
