@@ -6,6 +6,7 @@ using UnityEngine;
 public class RandomItemGenerator : MonoBehaviour
 {
     [SerializeField] private List<GameObject> TurkishItemsPrefab = new List<GameObject>();
+    [SerializeField] private List<GameObject> TurkishItemsPrefab_Rhyme = new List<GameObject>();
     [SerializeField] private List<GameObject> FinnishItemsPrefabs = new List<GameObject>();
     [SerializeField] private List<GameObject> SelectedItems = new List<GameObject>();
     [SerializeField] private List<GameObject> ItemSlots = new List<GameObject>();
@@ -38,7 +39,7 @@ public class RandomItemGenerator : MonoBehaviour
                 ChooseRandomItems_LastLetterGame(ItemsPrefab);
                 break;
             case MillGameModes.Rhyme:
-                ChooseRandomItems_RhymeGame(ItemsPrefab);
+                ChooseRandomItems_RhymeGame(TurkishItemsPrefab_Rhyme);
                 break;
             default:
                 break;
@@ -108,16 +109,16 @@ public class RandomItemGenerator : MonoBehaviour
             SelectedItems.Add(selectedItem);
             ItemsPrefab.RemoveAt(randomItem);
             // çýkan sayýnýn indexinde bulunan prefabin ilk harfini al
-            char firstLetter = selectedItem.name[0];
+            string lastTwoLetter = selectedItem.name.Substring(selectedItem.name.Length - 9, 2);
             // ayný harften bir obje bulana kadar random at
-            int randomItemWithSameFirstLetter = Random.Range(0, ItemsPrefab.Count);
-            while (ItemsPrefab[randomItemWithSameFirstLetter].name[0] != firstLetter && ItemsPrefab[randomItemWithSameFirstLetter] != selectedItem)
+            int randomItemWithSameLastTwoLetter = Random.Range(0, ItemsPrefab.Count);
+            while (ItemsPrefab[randomItemWithSameLastTwoLetter].name.Substring(ItemsPrefab[randomItemWithSameLastTwoLetter].name.Length - 3) != lastTwoLetter)
             {
-                randomItemWithSameFirstLetter = Random.Range(0, ItemsPrefab.Count);
+                randomItemWithSameLastTwoLetter = Random.Range(0, ItemsPrefab.Count);
             }
-            GameObject newItemWitheSameFirstLetter = Instantiate(ItemsPrefab[randomItemWithSameFirstLetter]);
+            GameObject newItemWitheSameFirstLetter = Instantiate(ItemsPrefab[randomItemWithSameLastTwoLetter]);
             SelectedItems.Add(newItemWitheSameFirstLetter);
-            ItemsPrefab.RemoveAt(randomItemWithSameFirstLetter);
+            ItemsPrefab.RemoveAt(randomItemWithSameLastTwoLetter);
         }
     }
 
