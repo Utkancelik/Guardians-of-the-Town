@@ -29,11 +29,6 @@ public class MillGameManager : MonoBehaviour
         winPanel.SetActive(false);
     }
 
-    private void Start()
-    {
-        
-    }
-
     public void CheckSlotItems()
     {
         slotItem1 = matchingSlot1.transform.GetChild(0).gameObject;
@@ -51,7 +46,7 @@ public class MillGameManager : MonoBehaviour
                     StartCoroutine(WrongMatch());
                 break;
             case MillGameModes.LastLetter:
-                if (slotItem1.name[slotItem1.name.Length - 1] == slotItem2.name[slotItem2.name.Length - 1])
+                if (slotItem1.name[^8] == slotItem2.name[^8])
                     StartCoroutine(TrueMatch());
                 else
                     StartCoroutine(WrongMatch());

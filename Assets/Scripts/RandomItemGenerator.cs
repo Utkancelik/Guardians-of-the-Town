@@ -25,7 +25,7 @@ public class RandomItemGenerator : MonoBehaviour
             ChooseRandomItems(FinnishItemsPrefabs);
         }
 
-        AddingRandomSelectedItemsToItemSlotsRandomly();
+        
     }
     private void ChooseRandomItems(List<GameObject> ItemsPrefab)
     {
@@ -43,6 +43,8 @@ public class RandomItemGenerator : MonoBehaviour
             default:
                 break;
         }
+
+        AddingRandomSelectedItemsToItemSlotsRandomly();
     }
     private void ChooseRandomItems_FirstLetterGame(List<GameObject> ItemsPrefab)
     {
@@ -81,10 +83,10 @@ public class RandomItemGenerator : MonoBehaviour
             SelectedItems.Add(selectedItem);
             ItemsPrefab.RemoveAt(randomItem);
             // çýkan sayýnýn indexinde bulunan prefabin ilk harfini al
-            char lastLetter = selectedItem.name[selectedItem.name.Length - 1];
+            char lastLetter = selectedItem.name[^8];
             // ayný harften bir obje bulana kadar random at
             int randomItemWithSameLastLetter = Random.Range(0, ItemsPrefab.Count);
-            while (ItemsPrefab[randomItemWithSameLastLetter].name[ItemsPrefab[randomItemWithSameLastLetter].name.Length - 1] != lastLetter)
+            while (ItemsPrefab[randomItemWithSameLastLetter].name[^1] != lastLetter)
             {
                 randomItemWithSameLastLetter = Random.Range(0, ItemsPrefab.Count);
             }
@@ -128,6 +130,7 @@ public class RandomItemGenerator : MonoBehaviour
             GameObject randomSelectedItem = SelectedItems[random];
 
             randomSelectedItem.transform.SetParent(ItemSlots[i].transform);
+            randomSelectedItem.GetComponent<DraggableItem>().originalParent = ItemSlots[i].transform;
 
             SelectedItems.RemoveAt(random);
         }
