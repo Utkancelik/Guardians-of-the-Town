@@ -112,12 +112,12 @@ public class RandomItemGenerator : MonoBehaviour
             string lastTwoLetter = selectedItem.name.Substring(selectedItem.name.Length - 9, 2);
             // ayný harften bir obje bulana kadar random at
             int randomItemWithSameLastTwoLetter = Random.Range(0, ItemsPrefab.Count);
-            while (ItemsPrefab[randomItemWithSameLastTwoLetter].name.Substring(ItemsPrefab[randomItemWithSameLastTwoLetter].name.Length - 3) != lastTwoLetter)
+            while (ItemsPrefab[randomItemWithSameLastTwoLetter].name.Substring(ItemsPrefab[randomItemWithSameLastTwoLetter].name.Length - 2) != lastTwoLetter)
             {
                 randomItemWithSameLastTwoLetter = Random.Range(0, ItemsPrefab.Count);
             }
-            GameObject newItemWitheSameFirstLetter = Instantiate(ItemsPrefab[randomItemWithSameLastTwoLetter]);
-            SelectedItems.Add(newItemWitheSameFirstLetter);
+            GameObject newItemWitheSameLastTwoLetter = Instantiate(ItemsPrefab[randomItemWithSameLastTwoLetter]);
+            SelectedItems.Add(newItemWitheSameLastTwoLetter);
             ItemsPrefab.RemoveAt(randomItemWithSameLastTwoLetter);
         }
     }

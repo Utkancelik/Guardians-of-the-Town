@@ -55,6 +55,10 @@ public class MillGameManager : MonoBehaviour
                 //TODO
                 // buraya okunusu ayni olanlari check edecek bir sistem kur.
                 //TODO
+                if (slotItem1.name.Substring(slotItem1.name.Length - 9, 2) == slotItem2.name.Substring(slotItem2.name.Length - 9, 2))
+                    StartCoroutine(TrueMatch());
+                else
+                    StartCoroutine(WrongMatch());
                 break;
             default:
                 break;

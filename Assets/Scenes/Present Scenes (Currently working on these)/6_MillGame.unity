@@ -1485,10 +1485,8 @@ MonoBehaviour:
   - {fileID: 1956211394237152624, guid: 44e419f416f2eab48b91ce258ff2001e, type: 3}
   - {fileID: 3561037511839887428, guid: 85fe626e25b88c34492b4c7b0a5eefb6, type: 3}
   - {fileID: 3561037511839887428, guid: 36b6fe0633d5f4648a223884ba12bf8a, type: 3}
-  - {fileID: 6490781403788313835, guid: 53fc3232638f8ca4885390fb996a0820, type: 3}
-  - {fileID: 9126283481176254650, guid: 3857ffa54fedb124fb7ea104f139fd68, type: 3}
-  - {fileID: 3561037511839887428, guid: 4a0e8ea1ce16dbe47a70096cc6e66e49, type: 3}
-  - {fileID: 9126283481176254650, guid: 2a8f0cde9379b3944877f692ed48eb6d, type: 3}
+  - {fileID: 1956211394237152624, guid: 66e6486862ef6ce43988d78dce81f5db, type: 3}
+  - {fileID: 1956211394237152624, guid: c0face4925e772840af4ddcfbd299344, type: 3}
   FinnishItemsPrefabs: []
   SelectedItems: []
   ItemSlots:
