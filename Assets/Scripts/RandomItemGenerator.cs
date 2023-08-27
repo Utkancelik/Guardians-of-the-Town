@@ -13,21 +13,7 @@ public class RandomItemGenerator : MonoBehaviour
 
 
     [SerializeField] private int totalMatchCount = 4;
-    private void Start()
-    {
-        string language = PlayerPrefs.GetString("Language");
-
-        if (language == "Turkish")
-        {
-            ChooseRandomItems(TurkishItemsPrefab);
-        }
-        else if (language == "Finnish")
-        {
-            ChooseRandomItems(FinnishItemsPrefabs);
-        }
-
-        
-    }
+    
     private void ChooseRandomItems(List<GameObject> ItemsPrefab)
     {
         switch (MillGameManager.Instance.millGameMode)
@@ -135,5 +121,15 @@ public class RandomItemGenerator : MonoBehaviour
 
             SelectedItems.RemoveAt(random);
         }
+    }
+
+    public void CheckLanguageAndDetermineRandomItems()
+    {
+        string language = PlayerPrefs.GetString("Language");
+
+        if (language == "Turkish")
+            ChooseRandomItems(TurkishItemsPrefab);
+        else if (language == "Finnish")
+            ChooseRandomItems(FinnishItemsPrefabs);
     }
 }

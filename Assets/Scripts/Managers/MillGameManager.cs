@@ -10,6 +10,8 @@ public enum MillGameModes
 }
 public class MillGameManager : MonoBehaviour
 {
+    RandomItemGenerator randomItemGenerator;
+
     // ilk harf, son harf ya da okunus sekli modlarindan birini sececegiz
     public MillGameModes millGameMode;
 
@@ -27,6 +29,12 @@ public class MillGameManager : MonoBehaviour
     {
         Instance = this;
         winPanel.SetActive(false);
+        randomItemGenerator = GameObject.FindObjectOfType<RandomItemGenerator>();
+    }
+
+    private void Start()
+    {
+        GameMode();
     }
 
     public void CheckSlotItems()
@@ -99,5 +107,26 @@ public class MillGameManager : MonoBehaviour
         winPanel.SetActive(true);
         //PlayerPrefs.SetString("MillGameLevel1", "true");
         //MoneyManager.instance.money += 125;
+    }
+
+    private void GameMode()
+    {
+        int random = Random.Range(0, 3);
+        switch (random)
+        {
+            case 0:
+                millGameMode = MillGameModes.FirstLetter;
+                break;
+            case 1:
+                millGameMode = MillGameModes.LastLetter;
+                break;
+            case 2:
+                millGameMode = MillGameModes.Rhyme;
+                break;
+            default:
+                break;
+        }
+
+        randomItemGenerator.CheckLanguageAndDetermineRandomItems();
     }
 }
