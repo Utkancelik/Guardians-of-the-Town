@@ -473,7 +473,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -227.71, y: 1.1482849}
+  m_AnchoredPosition: {x: -100, y: 1.1482849}
   m_SizeDelta: {x: 129.7222, y: 132.94232}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &330329064
@@ -664,7 +664,7 @@ GameObject:
   - component: {fileID: 544782999}
   - component: {fileID: 544782998}
   m_Layer: 0
-  m_Name: Level Loader
+  m_Name: Scene_Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -682,7 +682,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bcc588b1dddd504c91705eae7b20172, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delaySeconds: 1
+  delaySeconds: 2
   blackScreenPanel: {fileID: 821486081}
 --- !u!4 &544782999
 Transform:
@@ -2193,7 +2193,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1497007796
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3536,7 +3536,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 227.71, y: 1.1482849}
+  m_AnchoredPosition: {x: 100, y: 1.1482849}
   m_SizeDelta: {x: 129.7222, y: 132.94232}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1931447904
@@ -3582,19 +3582,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1931447905}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 544782998}
-        m_TargetAssemblyTypeName: Scene_Manager, Assembly-CSharp
-        m_MethodName: LoadLevel
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 2_MainGameMenu
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1931447905
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3640,12 +3628,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1931447902}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7bbfed9c419891b4dbb518f78ab6c403, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelsMenu: 2_MainGameMenu
+  sceneManager: {fileID: 0}
 --- !u!1 &1935018853 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1698727841651585265, guid: fb8a6bc7d359b044781477972d1eb394, type: 3}

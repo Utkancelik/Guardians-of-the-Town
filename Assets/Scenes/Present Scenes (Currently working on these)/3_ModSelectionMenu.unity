@@ -1496,7 +1496,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bcc588b1dddd504c91705eae7b20172, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delaySeconds: 1
+  delaySeconds: 2
   blackScreenPanel: {fileID: 821486081}
 --- !u!1 &1852113819
 GameObject:

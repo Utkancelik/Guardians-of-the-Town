@@ -105,6 +105,13 @@ public class MillGameManager : MonoBehaviour
     {
         endGameSound.Play();
         winPanel.SetActive(true);
+
+        MoneyManager.instance.money += 125;
+        PlayerPrefs.SetInt("Money", MoneyManager.instance.money);
+        int experience = PlayerPrefs.GetInt("Experience");
+        experience += 3;
+        PlayerPrefs.SetInt("Experience", experience);
+
         //PlayerPrefs.SetString("MillGameLevel1", "true");
         //MoneyManager.instance.money += 125;
     }
