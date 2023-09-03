@@ -6,7 +6,7 @@ using UnityEngine;
 public class UIManager : MonoBehaviour
 {
     // gold miktarimizi gosteren textmeshpro
-    [SerializeField]private TextMeshProUGUI TMP_goldAmount;
+    [SerializeField] private TextMeshProUGUI TMP_goldAmount;
     // tum avatarlari depoledigimiz yer
     public GameObject[] avatars;
     // awake'te tmp componenti ne erisiyorujz
@@ -16,6 +16,11 @@ public class UIManager : MonoBehaviour
     }
     public void Start()
     {
+        AssignAvatar();
+    }
+
+    public void AssignAvatar()
+    {
         // avatarlarin hepsini kapat playerprefstekini ac.
         if (avatars.Length != 0)
         {
@@ -24,7 +29,7 @@ public class UIManager : MonoBehaviour
                 avatar.SetActive(false);
             }
 
-            int selectedAvatarIndex = PlayerPrefs.GetInt("SelectedAvatar",4);
+            int selectedAvatarIndex = PlayerPrefs.GetInt("SelectedAvatar", 4);
             avatars[selectedAvatarIndex].SetActive(true);
 
         }

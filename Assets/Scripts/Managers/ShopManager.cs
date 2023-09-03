@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class ShopManager : MonoBehaviour
 {
+    public ExperienceManager experienceManager;
     public static ShopManager instance;
 
     public GameObject[] shopCostums;
@@ -12,27 +13,29 @@ public class ShopManager : MonoBehaviour
     private void Awake()
     {
         instance = this;
+
+        experienceManager = GameObject.FindObjectOfType<ExperienceManager>();
     }
     private void Start()
     {
-        //CheckLocks();
+        CheckBuyability();
 
-        AssignAvatar();
+        //AssignAvatar();
     }
 
-    private void CheckLocks()
+    private void CheckBuyability()
     {
         for (int i = 0; i < shopCostums.Length; i++)
         {
             
             if (shopCostums[i].TryGetComponent<ShopCostum>(out var shopCostum))
             {
-                GameObject lockedElements = shopCostum.lockedElements;
+                
 
-                if (PlayerPrefs.GetInt(shopCostum.isUnlockedPref) == 1)
-                    lockedElements.SetActive(false);
+                if (experienceManager.experience >= shopCostum.experience)
+                    shopCostum.buyable = true;
                 else
-                    lockedElements.SetActive(true);
+                    shopCostum.buyable = false;
             }
             else
                 Debug.LogWarning("ShopCostum componentine eriþemedim!.");

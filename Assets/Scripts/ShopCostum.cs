@@ -3,9 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
-
+public enum CostumLevels
+{
+    Level1,
+    Level2,
+    Level3,
+    Level4,
+}
 public class ShopCostum : MonoBehaviour, IPointerClickHandler
 {
+    public ExperienceManager experienceManager;
+    public int experience = 0;
+    public CostumLevels costumLevel;
+    UIManager uiManager;
+
     // 0 = locked, 1 = unlocked
     public string isUnlockedPref;
 
@@ -13,6 +24,11 @@ public class ShopCostum : MonoBehaviour, IPointerClickHandler
     public GameObject lockedElements;
     public int costumIndex;
     public int costumCost = 870;
+    private void Awake()
+    {
+        experienceManager = GameObject.FindObjectOfType<ExperienceManager>();
+        uiManager = GameObject.FindObjectOfType<UIManager>();
+    }
     private void Start()
     {
         if (isUnlockedPref == "Default")
@@ -26,12 +42,12 @@ public class ShopCostum : MonoBehaviour, IPointerClickHandler
     public void OnPointerClick(PointerEventData eventData)
     {
         GameObject selectedCostum = eventData.pointerClick;
+        ShopCostum shopCostum = selectedCostum.GetComponent<ShopCostum>();
 
         if (PlayerPrefs.GetInt(isUnlockedPref) == 1)
         {
-            Sprite image = selectedCostum.transform.Find("Costum").GetComponent<Image>().sprite;
-            ShopManager.instance.selectedAvatar.GetComponent<Image>().sprite = image;
-            PlayerPrefs.SetInt("SelectedAvatar", costumIndex);
+            PlayerPrefs.SetInt("SelectedAvatar", shopCostum.costumIndex);
+            uiManager.AssignAvatar();
         }
         else if (PlayerPrefs.GetInt(isUnlockedPref) == 0 && buyable)
         {
@@ -40,15 +56,16 @@ public class ShopCostum : MonoBehaviour, IPointerClickHandler
                 MoneyManager.instance.money -= costumCost;
                 PlayerPrefs.SetInt("Money", MoneyManager.instance.money);
 
-                Sprite image = selectedCostum.transform.Find("Costum").GetComponent<Image>().sprite;
-                ShopManager.instance.selectedAvatar.GetComponent<Image>().sprite = image;
-                PlayerPrefs.SetInt("SelectedAvatar", costumIndex);
 
-                lockedElements.SetActive(false);
-                buyable = false;
+                PlayerPrefs.SetInt("SelectedAvatar", shopCostum.costumIndex);
+                uiManager.AssignAvatar();
+
+
+                shopCostum.lockedElements.SetActive(false);
+                shopCostum.buyable = false;
 
                 // it is unlocked
-                PlayerPrefs.SetInt(isUnlockedPref, 1);
+                PlayerPrefs.SetInt(shopCostum.isUnlockedPref, 1);
             }
         }
     }

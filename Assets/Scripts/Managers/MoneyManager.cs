@@ -6,7 +6,6 @@ using UnityEngine;
 public class MoneyManager : MonoBehaviour
 {
     public static MoneyManager instance;
-    [SerializeField] private TextMeshProUGUI txtGoldAmount;
     public int money = 12000;
 
     private void Awake()
@@ -14,13 +13,6 @@ public class MoneyManager : MonoBehaviour
         instance = this;
 
         DontDestroyOnLoad(gameObject);
-
-        
-    }
-
-    private void Start()
-    {
-        UpdateGoldAmount(txtGoldAmount);
     }
 
     private void OnDestroy()

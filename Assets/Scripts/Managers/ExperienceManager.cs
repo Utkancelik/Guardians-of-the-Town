@@ -2,9 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+public enum RozetLevel
+{
+    Level1,
+    Level2,
+    Level3,
+    Level4
+}
 public class ExperienceManager : MonoBehaviour
 {
+    public RozetLevel rozetLevel;
+
     [SerializeField] private Image Rozet;
 
     public Sprite lvl1, lvl2, lvl3, lvl4, lvl5, lvl6;
@@ -23,7 +31,7 @@ public class ExperienceManager : MonoBehaviour
     {
         experience = PlayerPrefs.GetInt("Experience", 0);
 
-        experienceSlider.value = experience%10;
+        experienceSlider.value = experience % 10;
 
         if (experience >= 0 && experience < 10)
         {
@@ -49,5 +57,21 @@ public class ExperienceManager : MonoBehaviour
         {
             Rozet.sprite = lvl6;
         }
+
+
+        RozetLevelAssing();
+
+    }
+
+    private void RozetLevelAssing()
+    {
+        if (Rozet.sprite == lvl1 && lvl2)
+            rozetLevel = RozetLevel.Level1;
+        else if (Rozet.sprite == lvl3)
+            rozetLevel = RozetLevel.Level2;
+        else if (Rozet.sprite == lvl4 & lvl5)
+            rozetLevel = RozetLevel.Level3;
+        else if (Rozet.sprite == lvl6)
+            rozetLevel = RozetLevel.Level4;
     }
 }
