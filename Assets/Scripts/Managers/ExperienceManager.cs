@@ -26,11 +26,11 @@ public class ExperienceManager : MonoBehaviour
     {
         Rozet = GameObject.FindGameObjectWithTag("Rozet").GetComponent<Image>();
         experienceSlider = GameObject.FindGameObjectWithTag("Slider").GetComponent<Slider>();
+
+        experience = PlayerPrefs.GetInt("Experience", 0);
     }
     private void Start()
     {
-        experience = PlayerPrefs.GetInt("Experience", 0);
-
         experienceSlider.value = experience % 10;
 
         if (experience >= 0 && experience < 10)

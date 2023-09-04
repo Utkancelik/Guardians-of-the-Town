@@ -18,37 +18,25 @@ public class CheckBuyability : MonoBehaviour
     }
     private void Start()
     {
-        CheckBuyabilityAndLocks();
+        //CheckBuyabilityAndLocks();
     }
 
-    private void CheckBuyabilityAndLocks()
+    public void CheckBuyabilityAndLocks()
     {
-        if (shopCostum == null)
+
+        if (experienceManager.experience >= shopCostum.experience)
         {
-            if (shopCostum.experience >= experienceManager.experience)
-            {
-                shopCostum.buyable = true;
-            }
-            else
-            {
-                shopCostum.buyable = false;
-            }
-
-            if (shopCostum.buyable)
-            {
-                Cost.SetActive(true);
-                Dark.SetActive(false);
-                Lock.SetActive(false);
-            }
-            else
-            {
-                Dark.SetActive(true);
-                Lock.SetActive(true);
-                Cost.SetActive(false);
-            }
+            shopCostum.buyable = true;
+            Cost.SetActive(true);
+            Dark.SetActive(false);
+            Lock.SetActive(false);
         }
-
-
-        
+        else
+        {
+            shopCostum.buyable = false;
+            Dark.SetActive(true);
+            Lock.SetActive(true);
+            Cost.SetActive(false);
+        }
     }
 }

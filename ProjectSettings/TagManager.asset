@@ -10,6 +10,7 @@ TagManager:
   - TMP_GoldAmount
   - Rozet
   - Slider
+  - MillGameModeTxt
   layers:
   - Default
   - TransparentFX

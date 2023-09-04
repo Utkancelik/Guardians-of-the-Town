@@ -12,6 +12,7 @@ public enum CostumLevels
 }
 public class ShopCostum : MonoBehaviour, IPointerClickHandler
 {
+    public GameObject checkBuyability;
     public ExperienceManager experienceManager;
     public int experience = 0;
     public CostumLevels costumLevel;
@@ -26,6 +27,7 @@ public class ShopCostum : MonoBehaviour, IPointerClickHandler
     public int costumCost = 870;
     private void Awake()
     {
+        checkBuyability = transform.Find("Off").gameObject;
         experienceManager = GameObject.FindObjectOfType<ExperienceManager>();
         uiManager = GameObject.FindObjectOfType<UIManager>();
     }
@@ -38,6 +40,10 @@ public class ShopCostum : MonoBehaviour, IPointerClickHandler
             lockedElements.SetActive(false);
         else
             lockedElements.SetActive(true);
+
+        if (checkBuyability != null && checkBuyability.activeInHierarchy)
+            checkBuyability.GetComponent<CheckBuyability>().CheckBuyabilityAndLocks(); Debug.Log("g");
+
     }
     public void OnPointerClick(PointerEventData eventData)
     {

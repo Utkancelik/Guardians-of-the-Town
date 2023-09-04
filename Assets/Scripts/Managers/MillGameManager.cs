@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public enum MillGameModes
@@ -10,6 +11,7 @@ public enum MillGameModes
 }
 public class MillGameManager : MonoBehaviour
 {
+    private TextMeshProUGUI millGameMode_Txt;
     RandomItemGenerator randomItemGenerator;
 
     // ilk harf, son harf ya da okunus sekli modlarindan birini sececegiz
@@ -30,6 +32,7 @@ public class MillGameManager : MonoBehaviour
         Instance = this;
         winPanel.SetActive(false);
         randomItemGenerator = GameObject.FindObjectOfType<RandomItemGenerator>();
+        millGameMode_Txt = GameObject.FindGameObjectWithTag("MillGameModeTxt").GetComponent<TextMeshProUGUI>();
     }
 
     private void Start()
@@ -135,5 +138,7 @@ public class MillGameManager : MonoBehaviour
         }
 
         randomItemGenerator.CheckLanguageAndDetermineRandomItems();
+
+        millGameMode_Txt.text = millGameMode.ToString();
     }
 }

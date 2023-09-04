@@ -18,7 +18,7 @@ public class ShopManager : MonoBehaviour
     }
     private void Start()
     {
-        CheckBuyability();
+        //CheckBuyability();
 
         //AssignAvatar();
     }
@@ -30,8 +30,6 @@ public class ShopManager : MonoBehaviour
             
             if (shopCostums[i].TryGetComponent<ShopCostum>(out var shopCostum))
             {
-                
-
                 if (experienceManager.experience >= shopCostum.experience)
                     shopCostum.buyable = true;
                 else
