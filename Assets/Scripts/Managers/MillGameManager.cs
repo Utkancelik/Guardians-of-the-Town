@@ -11,7 +11,12 @@ public enum MillGameModes
 }
 public class MillGameManager : MonoBehaviour
 {
-    private TextMeshProUGUI millGameMode_Txt;
+    private WomanAudio womanAudioScript;
+
+    public GameObject FirstLetter, LastLetter, Rhyme;
+
+    public int gainedMoney, gainedExperience;
+
     RandomItemGenerator randomItemGenerator;
 
     // ilk harf, son harf ya da okunus sekli modlarindan birini sececegiz
@@ -32,7 +37,7 @@ public class MillGameManager : MonoBehaviour
         Instance = this;
         winPanel.SetActive(false);
         randomItemGenerator = GameObject.FindObjectOfType<RandomItemGenerator>();
-        millGameMode_Txt = GameObject.FindGameObjectWithTag("MillGameModeTxt").GetComponent<TextMeshProUGUI>();
+        womanAudioScript = GameObject.FindObjectOfType<WomanAudio>();
     }
 
     private void Start()
@@ -109,10 +114,10 @@ public class MillGameManager : MonoBehaviour
         endGameSound.Play();
         winPanel.SetActive(true);
 
-        MoneyManager.instance.money += 125;
+        MoneyManager.instance.money += gainedMoney;
         PlayerPrefs.SetInt("Money", MoneyManager.instance.money);
         int experience = PlayerPrefs.GetInt("Experience");
-        experience += 3;
+        experience += gainedExperience;
         PlayerPrefs.SetInt("Experience", experience);
 
         //PlayerPrefs.SetString("MillGameLevel1", "true");
@@ -121,24 +126,29 @@ public class MillGameManager : MonoBehaviour
 
     private void GameMode()
     {
+        FirstLetter.SetActive(false);LastLetter.SetActive(false);Rhyme.SetActive(false);
         int random = Random.Range(0, 3);
         switch (random)
         {
             case 0:
                 millGameMode = MillGameModes.FirstLetter;
+                FirstLetter.SetActive(true);
                 break;
             case 1:
                 millGameMode = MillGameModes.LastLetter;
+                LastLetter.SetActive(true);
                 break;
             case 2:
                 millGameMode = MillGameModes.Rhyme;
+                Rhyme.SetActive(true);
                 break;
             default:
                 break;
         }
 
+        womanAudioScript.WomanAudioInstruction();
+
         randomItemGenerator.CheckLanguageAndDetermineRandomItems();
 
-        millGameMode_Txt.text = millGameMode.ToString();
     }
 }
