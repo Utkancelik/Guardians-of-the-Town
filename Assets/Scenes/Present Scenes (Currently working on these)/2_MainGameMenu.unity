@@ -873,7 +873,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &405010390
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1760,7 +1760,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b18ea1e246917e4a875e002a5209654, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  txtGoldAmount: {fileID: 320328237}
   money: 12000
 --- !u!1 &1120425528
 GameObject:
@@ -2951,6 +2950,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8f4aab0eca40ec4a8b6690dc2086bb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rozetLevel: 0
   Rozet: {fileID: 0}
   lvl1: {fileID: 21300000, guid: d464652c883fd4a4f89187e4a631295b, type: 3}
   lvl2: {fileID: 21300000, guid: 0f9df0946dadea0478ce7f1c1f5c6a3f, type: 3}

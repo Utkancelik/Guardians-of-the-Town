@@ -98,7 +98,7 @@ public class RandomItemGenerator : MonoBehaviour
             string lastTwoLetter = selectedItem.name.Substring(selectedItem.name.Length - 9, 2);
             // ayný harften bir obje bulana kadar random at
             int randomItemWithSameLastTwoLetter = Random.Range(0, ItemsPrefab.Count);
-            while (ItemsPrefab[randomItemWithSameLastTwoLetter].name.Substring(ItemsPrefab[randomItemWithSameLastTwoLetter].name.Length - 2) != lastTwoLetter)
+            while (!string.Equals(ItemsPrefab[randomItemWithSameLastTwoLetter].name.Substring(ItemsPrefab[randomItemWithSameLastTwoLetter].name.Length - 2), lastTwoLetter))
             {
                 randomItemWithSameLastTwoLetter = Random.Range(0, ItemsPrefab.Count);
             }

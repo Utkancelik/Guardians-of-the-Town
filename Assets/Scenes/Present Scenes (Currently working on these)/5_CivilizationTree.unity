@@ -605,6 +605,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03c34c44ba1849b45afcc10f251206c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  civilizationShopManager: {fileID: 0}
   unlocked: 0
   cost: 870
   playerPrefsName: Army_2
@@ -1105,6 +1106,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03c34c44ba1849b45afcc10f251206c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  civilizationShopManager: {fileID: 0}
   unlocked: 1
   cost: 200
   playerPrefsName: Army_0
@@ -2360,6 +2362,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03c34c44ba1849b45afcc10f251206c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  civilizationShopManager: {fileID: 0}
   unlocked: 0
   cost: 200
   playerPrefsName: Commerce_0
@@ -2887,6 +2890,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03c34c44ba1849b45afcc10f251206c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  civilizationShopManager: {fileID: 0}
   unlocked: 0
   cost: 450
   playerPrefsName: Commerce_1
@@ -2980,6 +2984,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03c34c44ba1849b45afcc10f251206c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  civilizationShopManager: {fileID: 0}
   unlocked: 0
   cost: 870
   playerPrefsName: Science_2
@@ -3317,6 +3322,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03c34c44ba1849b45afcc10f251206c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  civilizationShopManager: {fileID: 0}
   unlocked: 0
   cost: 870
   playerPrefsName: Industry_2
@@ -3595,6 +3601,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03c34c44ba1849b45afcc10f251206c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  civilizationShopManager: {fileID: 0}
   unlocked: 0
   cost: 870
   playerPrefsName: Discovery_2
@@ -4144,6 +4151,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03c34c44ba1849b45afcc10f251206c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  civilizationShopManager: {fileID: 0}
   unlocked: 0
   cost: 200
   playerPrefsName: Industry_0
@@ -4980,6 +4988,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03c34c44ba1849b45afcc10f251206c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  civilizationShopManager: {fileID: 0}
   unlocked: 0
   cost: 450
   playerPrefsName: Industry_1
@@ -5535,6 +5544,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03c34c44ba1849b45afcc10f251206c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  civilizationShopManager: {fileID: 0}
   unlocked: 0
   cost: 450
   playerPrefsName: Science_1
@@ -5984,6 +5994,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03c34c44ba1849b45afcc10f251206c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  civilizationShopManager: {fileID: 0}
   unlocked: 0
   cost: 200
   playerPrefsName: Weapon_0
@@ -6435,6 +6446,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03c34c44ba1849b45afcc10f251206c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  civilizationShopManager: {fileID: 0}
   unlocked: 0
   cost: 450
   playerPrefsName: Culture_1
@@ -7108,6 +7120,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03c34c44ba1849b45afcc10f251206c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  civilizationShopManager: {fileID: 0}
   unlocked: 0
   cost: 870
   playerPrefsName: Culture_2
@@ -7156,6 +7169,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f13f2b3a7be75a249b767a8bc618fdc3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bg1: {fileID: 21300000, guid: 74a3411be9f1d39458fbe004ef505458, type: 3}
+  bg2: {fileID: 21300000, guid: d0b3107293ebd34408dd529f67ff2703, type: 3}
+  bg3: {fileID: 21300000, guid: 6ca720a3060ca8145bb3fbe07b400eec, type: 3}
+  bg4: {fileID: 21300000, guid: 9a22c8556a8ea2a47a6c142d32a63b0a, type: 3}
+  bg5: {fileID: 21300000, guid: 3d040fd495b43174bb6ff9facd349212, type: 3}
+  bg6: {fileID: 21300000, guid: f5ef065c46dd10e438fe61406707c9ed, type: 3}
+  bg7: {fileID: 21300000, guid: 134564381ee607840a0005fbf4ff9af7, type: 3}
+  bg8: {fileID: 21300000, guid: 4141ce5cc8c36b64db994b3d0e812498, type: 3}
+  TotalUnlockedItems: 0
   upgrades:
   - {fileID: 213228778}
   - {fileID: 1689433557}
@@ -7546,6 +7568,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03c34c44ba1849b45afcc10f251206c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  civilizationShopManager: {fileID: 0}
   unlocked: 0
   cost: 200
   playerPrefsName: Science_0
@@ -8059,6 +8082,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03c34c44ba1849b45afcc10f251206c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  civilizationShopManager: {fileID: 0}
   unlocked: 0
   cost: 200
   playerPrefsName: Culture_0
@@ -8228,6 +8252,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03c34c44ba1849b45afcc10f251206c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  civilizationShopManager: {fileID: 0}
   unlocked: 0
   cost: 870
   playerPrefsName: Commerce_2
@@ -8835,6 +8860,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03c34c44ba1849b45afcc10f251206c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  civilizationShopManager: {fileID: 0}
   unlocked: 0
   cost: 450
   playerPrefsName: Army_1
@@ -9296,6 +9322,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03c34c44ba1849b45afcc10f251206c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  civilizationShopManager: {fileID: 0}
   unlocked: 0
   cost: 870
   playerPrefsName: Weapon_2
@@ -9389,6 +9416,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03c34c44ba1849b45afcc10f251206c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  civilizationShopManager: {fileID: 0}
   unlocked: 0
   cost: 200
   playerPrefsName: Discovery_0
@@ -9734,6 +9762,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03c34c44ba1849b45afcc10f251206c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  civilizationShopManager: {fileID: 0}
   unlocked: 0
   cost: 450
   playerPrefsName: Discovery_1
@@ -10627,6 +10656,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03c34c44ba1849b45afcc10f251206c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  civilizationShopManager: {fileID: 0}
   unlocked: 0
   cost: 450
   playerPrefsName: Weapon_1

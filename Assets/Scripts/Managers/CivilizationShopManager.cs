@@ -27,5 +27,10 @@ public class CivilizationShopManager : MonoBehaviour
 
         firstUpgrade.SetActive(false);
         firstUpgrade.GetComponentInParent<CivilizationShopItem>().unlocked = true;
+
+
+        
     }
+
+    
 }
