@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
+    public Sprite bg1, bg2, bg3, bg4, bg5, bg6, bg7, bg8, selectedBG;
+    public GameObject background;
     // gold miktarimizi gosteren textmeshpro
     [SerializeField] private TextMeshProUGUI TMP_goldAmount;
     // tum avatarlari depoledigimiz yer
@@ -17,6 +19,41 @@ public class UIManager : MonoBehaviour
     }
     public void Start()
     {
+        int totalUnlockedCivilizationItems = PlayerPrefs.GetInt("UnlockedCivilizations", 1);
+        if (totalUnlockedCivilizationItems >= 3)
+        {
+            selectedBG = bg2;
+        }
+        else if (totalUnlockedCivilizationItems >= 6)
+        {
+            selectedBG = bg3;
+        }
+        else if (totalUnlockedCivilizationItems >= 9)
+        {
+            selectedBG = bg4;
+        }
+        else if (totalUnlockedCivilizationItems >= 12)
+        {
+            selectedBG = bg5;
+        }
+        else if (totalUnlockedCivilizationItems >= 15)
+        {
+            selectedBG = bg6;
+        }
+        else if (totalUnlockedCivilizationItems >= 18)
+        {
+            selectedBG = bg7;
+        }
+        else if (totalUnlockedCivilizationItems >= 21)
+        {
+            selectedBG = bg8;
+        }
+        else
+        {
+            selectedBG = bg1;
+        }
+        background.GetComponent<Image>().sprite = selectedBG;   
+
         AssignAvatar();
     }
 

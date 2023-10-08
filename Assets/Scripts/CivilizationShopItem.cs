@@ -21,6 +21,7 @@ public class CivilizationShopItem : MonoBehaviour, IPointerClickHandler
                 CivilizationStarManager.instance.CheckStars();
                 MoneyManager.instance.money -= cost;
                 PlayerPrefs.SetInt("Money", MoneyManager.instance.money);
+                PlayerPrefs.SetInt("UnlockedCivilizations", PlayerPrefs.GetInt("UnlockedCivilizations") + 1);
             }
         }
     }

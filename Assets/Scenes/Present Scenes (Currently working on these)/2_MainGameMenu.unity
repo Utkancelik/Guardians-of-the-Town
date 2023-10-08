@@ -1035,6 +1035,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af1ce859c94b2b041a0d313c43a0f6fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bg1: {fileID: 21300000, guid: ea80e9054fb8f62458cf6f6ed114d633, type: 3}
+  bg2: {fileID: 21300000, guid: 74a3411be9f1d39458fbe004ef505458, type: 3}
+  bg3: {fileID: 21300000, guid: d0b3107293ebd34408dd529f67ff2703, type: 3}
+  bg4: {fileID: 21300000, guid: 6ca720a3060ca8145bb3fbe07b400eec, type: 3}
+  bg5: {fileID: 21300000, guid: 9a22c8556a8ea2a47a6c142d32a63b0a, type: 3}
+  bg6: {fileID: 21300000, guid: 3d040fd495b43174bb6ff9facd349212, type: 3}
+  bg7: {fileID: 21300000, guid: f5ef065c46dd10e438fe61406707c9ed, type: 3}
+  bg8: {fileID: 21300000, guid: 134564381ee607840a0005fbf4ff9af7, type: 3}
+  selectedBG: {fileID: 21300000, guid: 4141ce5cc8c36b64db994b3d0e812498, type: 3}
+  background: {fileID: 1785442612}
   TMP_goldAmount: {fileID: 0}
   avatars:
   - {fileID: 1375705964}
