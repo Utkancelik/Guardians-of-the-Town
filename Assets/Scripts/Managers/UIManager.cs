@@ -52,7 +52,11 @@ public class UIManager : MonoBehaviour
         {
             selectedBG = bg1;
         }
-        background.GetComponent<Image>().sprite = selectedBG;   
+        if (background != null)
+        {
+            background.GetComponent<Image>().sprite = selectedBG;
+        }
+        
 
         AssignAvatar();
     }
